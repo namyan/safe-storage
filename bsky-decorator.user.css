@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Jen's BSKY decorator
 @namespace      data's bsky decor
-@version        0.1
+@version        0.11
 @description    hopefully custom-per-user css
 @author         databreach
 @preprocessor default
@@ -30,7 +30,7 @@
 		/* prepping bsky / adding backgroundcolor */
 		[data-testid *= "feedItem-by"],
 		[style = "padding: 16px; border-radius: 12px; border-width: 1px; border-color: rgb(44, 58, 78);"],
-		.css-g5y9jx .r-1otgn73[href *= "/profile/did:plc:"]
+		.css-g5y9jx .r-1otgn73[href *= "/profile/did:plc:"],[data-testid="profileView"] > div:nth-child(1) > div:nth-child(1)
 		{
 			background: var(--background)
 		}
