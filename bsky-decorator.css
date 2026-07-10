@@ -1,0 +1,153 @@
+/* ==UserStyle==
+@name           Jen's BSKY decorator
+@namespace      data's bsky decor
+@version        0.1
+@description    hopefully custom-per-user css
+@author         databreach
+@preprocessor default
+
+
+==/UserStyle== */
+@-moz-document url-prefix("https://bsky.app/")
+{
+
+	:root
+	{
+		--databreach-bsky-social-pfp: url(https://file.garden/aOJ1bpVloELMsNWb/discord_decor/GNyvAG-XEAAhycu.png?v=1783539996612);
+		--databreach-bsky-social-banner: url(https://cdn.discordapp.com/media/v1/collectibles-shop/ab4385a5a8e984e11ddd60bf8d5378f9ddc0f706bf6c1a0b5ba2a4df666c01fd);
+		--databreach-bsky-social-profile: url(https://f2.toyhou.se/file/f2-toyhou-se/images/76929822_jDmQKoLgBd5jA4b.png);
+
+		--meowtopsie-com-pfp: url(https://file.garden/aOJ1bpVloELMsNWb/discord_decor/cloud-nine.png);
+		--meowtopsie-com-banner: url(https://file.garden/aOJ1bpVloELMsNWb/discord_profile/c88756dc0239f08ca1f14f887b9834210500f85639f5ddfc7b4d203ec9dbcacf.png);
+		--meowtopsie-com-profile: url("");
+
+		--pistorius-bsky-social-pfp: url(https://file.garden/aOJ1bpVloELMsNWb/discord_decor/animated.png?v=1783530027599);
+		--pistorius-bsky-social-banner: url();
+		--pistorius-bsky-social-profile: url();
+	}
+
+	/*----------------------------------------------*/
+		/* prepping bsky / adding backgroundcolor */
+		[data-testid *= "feedItem-by"],
+		[style = "padding: 16px; border-radius: 12px; border-width: 1px; border-color: rgb(44, 58, 78);"],
+		.css-g5y9jx .r-1otgn73[href *= "/profile/did:plc:"]
+		{
+			background: var(--background)
+		}
+
+		/* profile bg settings*/
+		[style = "background-color: rgb(21, 29, 40);"]:has( > [data-testid = "profileScreen"]):has([aria-label *= "'s avatar"]):before
+		{
+			content: "";
+			position: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			height: 100%;
+			mask-image: linear-gradient(90deg, transparent 100px, black 50%, transparent calc(100% - 100px));
+		}
+
+		/* banner decoration */
+		[data-testid = "profileView"]:has(a[href *= "/followers"][data-testid = "profileHeaderFollowersButton"]) [data-testid = "userBannerImage"]:after
+		{
+			content: "";
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-position: top center;
+			background-size: cover;
+			pointer-events: none;
+		}
+
+		/*general settings*/
+		[aria-label *= "'s avatar"]:after,
+		a[href *= "/profile/"] div:has(img):after,
+		[aria-label *= "'s avatar"] div div div:after,
+		[aria-label *= "Post by"] div div div div div:after
+		{
+			content: "";
+			background-size: contain;
+			background-repeat: no-repeat;
+			position: absolute;
+			pointer-events: none;
+			left: auto;
+			height: inherit;
+			width: inherit;
+			top: -0%;
+			right: -0%;
+			transform: scale(120%);
+		}
+
+	/*----------------------------------------------*/
+	
+	/*databreach.bsky.social*/
+		/*general settings*/
+		[aria-label = "View databreach.bsky.social's avatar"]:after,
+		a[href = "/profile/databreach.bsky.social"] div:has(img):after,
+		[aria-label = "View databreach.bsky.social's avatar"] div div div:after,
+		[aria-label = "Post by databreach.bsky.social"] div div div div div:after
+		{
+			background-image: var(--databreach-bsky-social-pfp);
+		}
+
+
+		/*scaling + positioning settings*/
+		[aria-label = "View databreach.bsky.social's avatar"]:after,
+		a[href = "/profile/databreach.bsky.social"] div:has(img):after,
+		[aria-label = "View databreach.bsky.social's avatar"] div div div:after,
+		[data-testid = "composePostView"] div:has([data-testid = "userAvatarImage"]):after,
+		[aria-label = "Compose reply"] div:has([data-testid = "userAvatarImage"]):after,
+		[aria-label = "Post by databreach.bsky.social"] div div div div div:after
+		{
+			top: -7%!important;
+			right: -7%!important;
+			transform: scale(124%);
+		}
+
+		/* banner decoration */
+		[data-testid = "profileView"]:has(a[href = "/profile/databreach.bsky.social/followers"][data-testid = "profileHeaderFollowersButton"]) [data-testid = "userBannerImage"]:after
+		{
+			background-image: var(--databreach-bsky-social-banner)
+		}
+
+		/* profile background image*/
+		[style = "background-color: rgb(21, 29, 40);"]:has( > [data-testid = "profileScreen"]):has([aria-label = "View databreach.bsky.social's avatar"]):before
+		{
+			background-image: var(--databreach-bsky-social-profile);
+		}
+
+	/*meowtopsie.com*/
+		/*general settings*/
+		[aria-label = "View meowtopsie.com's avatar"]:after,
+		a[href = "/profile/meowtopsie.com"] div:has(img):after,
+		[aria-label = "View meowtopsie.com's avatar"] div div div:after,
+		[aria-label = "Post by meowtopsie.com"] div div div div div:after
+		{
+			background-image: var(--meowtopsie-com-pfp);
+		}
+
+
+		/* banner decoration */
+		[data-testid = "profileView"]:has(a[href = "/profile/meowtopsie.com/followers"][data-testid = "profileHeaderFollowersButton"]) [data-testid = "userBannerImage"]:after
+		{
+			background-image: var(--meowtopsie-com-banner);
+		}
+
+		/* profile background image*/
+		[style = "background-color: rgb(21, 29, 40);"]:has( > [data-testid = "profileScreen"]):has([aria-label = "View meowtopsie.com's avatar"]):before
+		{
+			background-image: var(--meowtopsie-com-profile);
+		}
+
+	/*pistorius.bsky.social*/
+		/*general settings*/
+		[aria-label = "View pistorius.bsky.social's avatar"]:after,
+		a[href = "/profile/pistorius.bsky.social"] div:has(img):after,
+		[aria-label = "View pistorius.bsky.social's avatar"] div div div:after,
+		[aria-label = "Post by pistorius.bsky.social"] div div div div div:after
+		{
+			background-image: var(--pistorius-bsky-social-pfp);
+		}
+}
