@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Jen's BSKY decorator
 @namespace      data's bsky decor
-@version        0.2
+@version        0.3
 @description    hopefully custom-per-user css
 @author         databreach
 @preprocessor default
@@ -65,7 +65,7 @@
 		[aria-label *= "'s avatar"]:after,
 		a[href *= "/profile/"] div:has(img):after,
 		[aria-label *= "'s avatar"] div div div:after,
-		[aria-label *= "Post by"] div div div div div:after
+		[aria-label *= "Post by"] div div div div div:not(:has(img[src*="https://cdn.bsky.app/img/feed_thumbnail/plain/"])):after
 		{
 			content: "";
 			background-size: contain;
