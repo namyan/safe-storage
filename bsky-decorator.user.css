@@ -13,7 +13,7 @@
 
 	:root
 	{
-		--databreach-bsky-social-pfp: url(https://file.garden/aOJ1bpVloELMsNWb/discord_decor/GNyvAG-XEAAhycu.png?v=1783539996612);
+		--databreach-bsky-social-pfp: url(https://file.garden/aOJ1bpVloELMsNWb/discord_decor/black_hole.png);
 		--databreach-bsky-social-banner: url(https://cdn.discordapp.com/media/v1/collectibles-shop/ab4385a5a8e984e11ddd60bf8d5378f9ddc0f706bf6c1a0b5ba2a4df666c01fd);
 		--databreach-bsky-social-profile: url(https://f2.toyhou.se/file/f2-toyhou-se/images/76929822_jDmQKoLgBd5jA4b.png);
 
@@ -101,9 +101,9 @@
 		[aria-label = "Compose reply"] div:has([data-testid = "userAvatarImage"]):after,
 		[aria-label = "Post by databreach.bsky.social"] div div div div div:after
 		{
-			top: -7%!important;
-			right: -7%!important;
-			transform: scale(124%);
+			top: -2%!important;
+			right: -2%!important;
+			transform: scale(135%);
 		}
 
 		/* banner decoration */
